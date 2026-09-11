@@ -16,16 +16,16 @@
 :root{
 --paper:#FAF8F5;--paper-2:#EFECE6;--ink:#0E0D0B;--ink-2:#2A2823;--ink-3:#5C574E;--ink-4:#8E887D;
 --ochre:#A16207;--ochre-dk:#7C4A05;--ochre-lt:#C88A24;--ochre-tint:#F0E4CE;--void:#0A0908;
---rule:rgba(14,13,11,.14);--rule-2:rgba(14,13,11,.34);--rule-media:rgba(250,248,245,.22);
+--rule:rgba(14,13,11,.14);--rule-2:rgba(14,13,11,.34);
 --f:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
---g:clamp(20px,5.5vw,72px);--sy:clamp(80px,15vw,180px);
+--g:clamp(20px,5.5vw,72px);--sy:clamp(80px,15vw,176px);--gap:2px;
 --e:cubic-bezier(.22,.61,.36,1);
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink-2);font-family:var(--f);font-size:15px;line-height:1.62;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;text-wrap:pretty}
 img,video{display:block;max-width:100%}
-h1,h2,h3,p,dl,dd,figure,ul{margin:0}ul{padding:0;list-style:none}
+h1,h2,h3,p,dl,dd,figure,ul,ol{margin:0}ul,ol{padding:0;list-style:none}
 a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule-2);transition:opacity 140ms var(--e),border-color 140ms var(--e)}
 a:hover{opacity:.62;border-bottom-color:var(--ochre)}
 a:active{opacity:.5}
@@ -33,7 +33,7 @@ a:active{opacity:.5}
 ::selection{background:var(--ochre-tint);color:var(--ink)}
 .wrap{max-width:1180px;margin-inline:auto}
 .sec{padding:var(--sy) var(--g)}
-.sec-t{padding:56px var(--g)}
+.pad{padding:clamp(36px,7vw,64px) var(--g)}
 .lbl{font-size:11px;font-weight:500;line-height:1.1;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-4)}
 .lbl-a{color:var(--ochre)}
 .rv{opacity:0;transform:translateY(14px);transition:opacity 640ms var(--e),transform 640ms var(--e)}
@@ -41,34 +41,65 @@ a:active{opacity:.5}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 
 /* ══ INTRO — SWAPPABLE BLOCK. Edit only inside #intro to retarget this page. ══ */
-#intro{padding:clamp(96px,22vw,200px) var(--g) var(--sy)}
-#intro .name{font-size:clamp(2.75rem,13vw,7rem);font-weight:600;line-height:.9;letter-spacing:-.05em;color:var(--ink);margin-bottom:clamp(28px,6vw,44px)}
-#intro .role{font-size:clamp(1.25rem,5vw,2rem);font-weight:400;line-height:1.18;letter-spacing:-.025em;color:var(--ink);max-width:26ch}
+#intro{padding:clamp(96px,22vw,208px) var(--g) clamp(72px,14vw,152px)}
+#intro .name{font-size:clamp(2.75rem,13vw,7.5rem);font-weight:600;line-height:.88;letter-spacing:-.05em;color:var(--ink);margin-bottom:clamp(28px,6vw,48px)}
+#intro .role{font-size:clamp(1.25rem,5vw,2.125rem);font-weight:400;line-height:1.16;letter-spacing:-.028em;color:var(--ink);max-width:26ch}
 /* ══ END SWAPPABLE BLOCK ══ */
 
-.case{border-top:1px solid var(--rule)}
-.case-head{display:grid;gap:20px}
-.idx{display:flex;gap:12px;align-items:baseline}
-.title{font-size:clamp(2.5rem,11.5vw,7rem);font-weight:600;line-height:.9;letter-spacing:-.045em;color:var(--ink);text-wrap:balance}
-.brief{font-size:clamp(1.0625rem,3.4vw,1.375rem);line-height:1.35;letter-spacing:-.02em;color:var(--ink);max-width:30ch}
-.concept{color:var(--ink-3);max-width:36ch}
+/* full-width near-black break carrying study number + title */
+.brk{background:var(--void);color:var(--paper);padding:clamp(56px,12vw,128px) var(--g)}
+.brk .n{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ochre-lt);display:block;margin-bottom:clamp(20px,4vw,32px)}
+.brk h2{font-size:clamp(3rem,14.5vw,9rem);font-weight:600;line-height:.86;letter-spacing:-.05em;color:var(--paper);text-wrap:balance}
+.brk .kind{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,248,245,.58);margin-top:clamp(24px,5vw,40px);display:block}
+.brk .scope{font-size:13px;line-height:1.5;color:rgba(250,248,245,.66);margin-top:10px;max-width:46ch}
+
+.brief{font-size:clamp(1.125rem,3.8vw,1.5rem);line-height:1.3;letter-spacing:-.025em;color:var(--ink);max-width:30ch}
+.concept{color:var(--ink-3);max-width:36ch;margin-top:24px}
+
+/* media blocks — tight, edge to edge */
 .bleed{background:var(--void)}
-.bleed img,.bleed video{width:100%;height:auto}
-.tall{max-height:100svh;object-fit:contain;margin-inline:auto}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:2px;background:var(--void)}
-.grid2>figure{margin:0;overflow:hidden;aspect-ratio:4/5}
-.grid2 img{width:100%;height:100%;object-fit:cover}
-.reelrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:2px;background:var(--void)}
-.reelrow video{width:100%;aspect-ratio:9/16;object-fit:cover}
-.cap{padding:14px var(--g) 28px;background:var(--void)}
-.cap p{max-width:40ch;font-size:13px;line-height:1.45;color:rgba(250,248,245,.66)}
-.result{border-top:1px solid var(--rule-2);padding-top:24px;display:grid;gap:16px;max-width:34ch}
-.result p{font-size:clamp(1.375rem,5.2vw,2.125rem);line-height:1.18;letter-spacing:-.025em;font-weight:500;color:var(--ink)}
-.ph{color:var(--ochre-dk);background:var(--ochre-tint);padding:.1em .35em;font-weight:500}
-.credits{display:grid;gap:0;max-width:520px;margin-top:clamp(40px,8vw,64px)}
-.credits div{display:grid;grid-template-columns:minmax(112px,34%) 1fr;gap:16px;padding-block:11px;border-top:1px solid var(--rule)}
+.tall{width:100%;max-height:100svh;object-fit:contain;margin-inline:auto}
+.rows{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:var(--gap);background:var(--void)}
+.rows>figure{margin:0;overflow:hidden;aspect-ratio:4/5}
+.rows img{width:100%;height:100%;object-fit:cover}
+.reels{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr));gap:var(--gap);background:var(--void)}
+.reels video{width:100%;aspect-ratio:9/16;object-fit:cover}
+.light{background:var(--paper)}
+.light>figure{aspect-ratio:4/5}
+.cap{padding:14px var(--g) 26px;background:var(--void)}
+.cap p{max-width:44ch;font-size:13px;line-height:1.45;color:rgba(250,248,245,.66)}
+.cap-l{padding:14px var(--g) 26px}
+.cap-l p{max-width:44ch;font-size:13px;line-height:1.45;color:var(--ink-3)}
+
+/* empty 9:16 slot — no media supplied */
+.slot{display:grid;place-items:center;aspect-ratio:9/16;background:var(--paper-2);border:1px dashed var(--rule-2);padding:20px;text-align:center}
+.slot span{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ochre-dk);line-height:1.6}
+
+.result{border-top:1px solid var(--rule-2);padding-top:24px;display:grid;gap:16px;max-width:36ch}
+.result p{font-size:clamp(1.5rem,5.6vw,2.375rem);line-height:1.14;letter-spacing:-.03em;font-weight:500;color:var(--ink)}
+.ph{color:var(--ochre-dk);background:var(--ochre-tint);padding:.08em .3em;font-weight:500}
+.credits{display:grid;max-width:560px;margin-top:clamp(44px,9vw,72px)}
+.credits div{display:grid;grid-template-columns:minmax(118px,32%) 1fr;gap:16px;padding-block:11px;border-top:1px solid var(--rule)}
 .credits dd{font-size:13px;color:var(--ink-2)}
 .credits dt{padding-top:2px}
+
+/* method */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(268px,100%),1fr));gap:0 48px;margin-top:40px}
+.steps li{padding-block:22px;border-top:1px solid var(--rule)}
+.steps h3{font-size:clamp(1rem,2.6vw,1.1875rem);font-weight:500;line-height:1.22;letter-spacing:-.02em;color:var(--ink);margin-bottom:8px}
+.steps h3 b{color:var(--ochre);font-weight:500;margin-right:12px;font-variant-numeric:tabular-nums}
+.steps p{font-size:14px;line-height:1.5;color:var(--ink-3);max-width:34ch}
+
+/* one drop, every format — deliberately small and close */
+.mosaic{display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(96px,15vw,168px),1fr));gap:1px;background:var(--void)}
+.mosaic figure{margin:0;overflow:hidden;aspect-ratio:1}
+.mosaic img,.mosaic video{width:100%;height:100%;object-fit:cover}
+
+.disc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:0 48px;margin-top:36px}
+.disc li{padding-block:20px;border-top:1px solid var(--rule)}
+.disc h3{font-size:clamp(1.0625rem,2.8vw,1.3125rem);font-weight:500;line-height:1.2;letter-spacing:-.022em;color:var(--ink);margin-bottom:7px}
+.disc p{font-size:14px;line-height:1.5;color:var(--ink-3);max-width:32ch}
+
 .list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:0 40px;margin-top:32px}
 .list li{font-size:clamp(1.0625rem,2.8vw,1.3125rem);line-height:1.25;letter-spacing:-.02em;color:var(--ink);padding-block:14px;border-top:1px solid var(--rule)}
 .contact{display:grid;gap:18px;margin-top:32px}
@@ -80,147 +111,214 @@ footer{padding:40px var(--g) 56px;border-top:1px solid var(--rule)}
 <main>
 
 <!-- ═══════════════════════════════════════════════════════════════════
-     INTRO — SWAPPABLE. This is the only section that changes between
+     INTRO — SWAPPABLE. The only section that changes between
      applications. Edit the name and the one role line below; leave
      everything after </section> untouched.
      ═══════════════════════════════════════════════════════════════════ -->
 <section id="intro">
 <div class="wrap rv">
 <h1 class="name">Bilal Ghazi</h1>
-<p class="role">Creative and content lead. I build campaigns end to end — concept, direction, edit.</p>
+<p class="role">Creative and content lead. I run drops end to end — concept, direction, edit, launch.</p>
 </div>
 </section>
 <!-- ═══════════════════ END SWAPPABLE INTRO ═══════════════════ -->
 
 
 <!-- ── CASE 01 · Movement × Adeel uz Zafar ─────────────────────── -->
-<article class="case">
-<div class="sec-t"><div class="wrap case-head rv">
-<div class="idx"><span class="lbl lbl-a">01</span><span class="lbl">Artist collaboration</span></div>
-<h2 class="title">Movement × Adeel&nbsp;uz&nbsp;Zafar</h2>
+<div class="brk rv">
+<div class="wrap">
+<span class="n">Case 01</span>
+<h2>Movement × Adeel&nbsp;uz&nbsp;Zafar</h2>
+<span class="kind">Artist collaboration · Delivered for launch</span>
+<p class="scope"><span class="ph">[ADD SCOPE — films, stills and product shots produced for one launch date]</span></p>
+</div>
+</div>
+<article>
+<div class="bleed rv"><img src="./assets/adeel/artwork-bear-black.jpg" alt="Adeel uz Zafar — mummified bear drawing on black" class="tall" fetchpriority="high" width="1170" height="1560"></div>
+<div class="cap"><p>The source drawing. Monochrome, bandaged, hand-rendered.</p></div>
+
+<div class="pad"><div class="wrap rv">
 <p class="brief">A limited apparel drop built on Adeel uz Zafar's mummified-animal drawings, launched with Sanat Initiative.</p>
 <p class="concept">Take the artist's work off the gallery wall without flattening it into a print. The bandaged figures stay monochrome and stay drawn — the garment becomes another surface they live on, not merchandise they decorate. The launch was staged inside the gallery so the canvases and the clothes read as one body of work.</p>
 </div></div>
 
-<div class="bleed rv"><img src="./assets/adeel/artwork-bear-black.jpg" alt="Adeel uz Zafar — mummified bear drawing on black" class="tall" fetchpriority="high" width="1170" height="1560"></div>
-<div class="cap"><p>The source drawing. Monochrome, bandaged, hand-rendered.</p></div>
-
-<div class="reelrow rv">
+<div class="reels rv">
 <video data-src="./assets/reels/adeel-before-you-speak.mp4" poster="./assets/reels/adeel-before-you-speak-poster.png" muted loop playsinline preload="none"></video>
 <video data-src="./assets/reels/adeel-artist-story.mp4" poster="./assets/reels/adeel-artist-story-poster.png" muted loop playsinline preload="none"></video>
+<video data-src="./assets/reels/adeel-gallery-walk.mp4" poster="./assets/reels/adeel-gallery-walk-poster.png" muted loop playsinline preload="none"></video>
 </div>
-<div class="cap"><p>Artist films — the drawing being made, and Adeel on what the collaboration is for.</p></div>
-
-<div class="grid2 rv">
+<div class="rows rv">
 <figure><img src="./assets/adeel/artist-studio-bw.jpg" alt="Adeel uz Zafar working in his studio" loading="lazy" decoding="async"></figure>
-<figure><img src="./assets/adeel/gallery-viewer-canvases.jpg" alt="Visitor in a collection tee facing the canvases" loading="lazy" decoding="async"></figure>
 <figure><img src="./assets/adeel/artist-sculpture.jpg" alt="Adeel uz Zafar with the bandaged figure sculpture" loading="lazy" decoding="async"></figure>
-<figure><img src="./assets/adeel/polo-embroidery.jpg" alt="Polo chest embroidery detail" loading="lazy" decoding="async"></figure>
-<figure><img src="./assets/adeel/fragile-giant-tee.jpg" alt="The Fragile Giant tee" loading="lazy" decoding="async"></figure>
-<figure><img src="./assets/adeel/gallery-wide.jpg" alt="Launch night at Sanat Initiative" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/adeel/gallery-viewer-canvases.jpg" alt="Visitor in a collection tee facing the canvases" loading="lazy" decoding="async"></figure>
 </div>
+<div class="cap"><p>Artist films and launch night at Sanat Initiative — the drawing being made, the work on the wall, the clothes in the room.</p></div>
 
-<div class="reelrow rv">
-<video data-src="./assets/reels/adeel-getting-it-right.mp4" poster="./assets/reels/adeel-getting-it-right-poster.png" muted loop playsinline preload="none"></video>
-<video data-src="./assets/reels/adeel-ready-to-ship.mp4" poster="./assets/reels/adeel-ready-to-ship-poster.png" muted loop playsinline preload="none"></video>
-</div>
-<div class="cap"><p>Product and packing films, cut for sound off.</p></div>
-
-<div class="sec-t"><div class="wrap rv">
+<div class="pad"><div class="wrap rv">
 <div class="result">
 <span class="lbl lbl-a">Result</span>
-<p><span class="ph">[ADD RESULT — sell-through, reach or press. One line.]</span></p>
+<p>Sold out.</p>
 </div>
 <dl class="credits">
 <div><dt class="lbl">Creative Direction</dt><dd>Bilal Ghazi</dd></div>
 <div><dt class="lbl">Concept &amp; Copy</dt><dd>Bilal Ghazi</dd></div>
 <div><dt class="lbl">Direction &amp; Edit</dt><dd>Bilal Ghazi</dd></div>
 <div><dt class="lbl">Artist</dt><dd>Adeel uz Zafar</dd></div>
-<div><dt class="lbl">Photography</dt><dd><span class="ph">[NAME]</span></dd></div>
-<div><dt class="lbl">Styling</dt><dd><span class="ph">[NAME]</span></dd></div>
+<div><dt class="lbl">Photography</dt><dd>In-house team, directed by Bilal Ghazi</dd></div>
+<div><dt class="lbl">Styling</dt><dd>In-house team, directed by Bilal Ghazi</dd></div>
 </dl>
 </div></div>
 </article>
 
 
 <!-- ── CASE 02 · Movement × Lyari Drop ─────────────────────────── -->
-<article class="case">
-<div class="sec-t"><div class="wrap case-head rv">
-<div class="idx"><span class="lbl lbl-a">02</span><span class="lbl">Culture-led collection</span></div>
-<h2 class="title">Movement × Lyari&nbsp;Drop</h2>
+<div class="brk rv">
+<div class="wrap">
+<span class="n">Case 02</span>
+<h2>Movement × Lyari&nbsp;Drop</h2>
+<span class="kind">Culture-led collection · Delivered for launch</span>
+<p class="scope"><span class="ph">[ADD SCOPE — films, stills and product shots produced for one launch date]</span></p>
+</div>
+</div>
+<article>
+<div class="bleed rv"><img src="./assets/campaign/lyari-tee-back.png" alt="From Lyari to the World — back print" class="tall" loading="lazy" decoding="async"></div>
+<div class="cap"><p>Back print — from Lyari to the world.</p></div>
+
+<div class="pad"><div class="wrap rv">
 <p class="brief">A capsule tied to a neighbourhood rather than a season.</p>
 <p class="concept">Make it read as Lyari-made, not Lyari-themed. The print collages the place itself, so the garment carries its own location. Shot on the ground in black and white, local cast, no studio, no grade beyond contrast.</p>
 </div></div>
 
-<div class="bleed rv"><img src="./assets/campaign/lyari-tee-back.png" alt="From Lyari to the World — back print" class="tall" loading="lazy" decoding="async"></div>
-<div class="cap"><p>Back print — from Lyari to the world.</p></div>
+<!-- Lyari 9:16 films — three slots at the same weight as the Adeel films.
+     Replace each .slot div with:
+     <video data-src="./assets/reels/FILE.mp4" poster="./assets/reels/FILE-poster.png" muted loop playsinline preload="none"></video> -->
+<div class="reels light rv">
+<div class="slot"><span>9:16 film<br>[ADD FILE]</span></div>
+<div class="slot"><span>9:16 film<br>[ADD FILE]</span></div>
+<div class="slot"><span>9:16 film<br>[ADD FILE]</span></div>
+</div>
+<div class="cap-l"><p>The Lyari films sit here at full weight, three across. No 9:16 file for this drop was supplied — drop the MP4s into <code>./assets/reels/</code> and swap them in.</p></div>
 
-<div class="grid2 rv">
-<figure><img src="./assets/campaign/movement-tee-portrait.png" alt="Movement tee portrait" loading="lazy" decoding="async"></figure>
+<div class="rows light rv">
+<figure><img src="./assets/campaign/movement-tee-portrait.png" alt="Movement tee portrait, black and white" loading="lazy" decoding="async"></figure>
 <figure><img src="./assets/adeel/movement-back-print.jpg" alt="Movement arc back print" loading="lazy" decoding="async"></figure>
 </div>
+<div class="cap-l"><p>Monochrome stills, on the light ground, ungraded.</p></div>
 
-<div class="sec-t"><div class="wrap rv">
+<div class="pad"><div class="wrap rv">
 <div class="result">
 <span class="lbl lbl-a">Result</span>
-<p><span class="ph">[ADD RESULT — one line.]</span></p>
+<p>Shot entirely on location in Lyari with a local cast. <span class="ph">[ADD REACH OR SELL-THROUGH]</span></p>
 </div>
 <dl class="credits">
 <div><dt class="lbl">Creative Direction</dt><dd>Bilal Ghazi</dd></div>
 <div><dt class="lbl">Concept &amp; Copy</dt><dd>Bilal Ghazi</dd></div>
 <div><dt class="lbl">Direction &amp; Edit</dt><dd>Bilal Ghazi</dd></div>
-<div><dt class="lbl">Photography</dt><dd><span class="ph">[NAME]</span></dd></div>
-<div><dt class="lbl">Styling</dt><dd><span class="ph">[NAME]</span></dd></div>
+<div><dt class="lbl">Photography</dt><dd>In-house team, directed by Bilal Ghazi</dd></div>
+<div><dt class="lbl">Styling</dt><dd>In-house team, directed by Bilal Ghazi</dd></div>
 </dl>
-<p class="lbl" style="margin-top:28px">No 9:16 film was shot for this drop — stills only.</p>
 </div></div>
 </article>
 
 
 <!-- ── CASE 03 · Retro State / Game Over ───────────────────────── -->
-<article class="case">
-<div class="sec-t"><div class="wrap case-head rv">
-<div class="idx"><span class="lbl lbl-a">03</span><span class="lbl">Product art direction</span></div>
-<h2 class="title">Retro State — Game&nbsp;Over</h2>
+<div class="brk rv">
+<div class="wrap">
+<span class="n">Case 03</span>
+<h2>Retro State — Game&nbsp;Over</h2>
+<span class="kind">Product art direction · Delivered for launch</span>
+<p class="scope"><span class="ph">[ADD SCOPE — films, stills and product shots produced for one launch date]</span></p>
+</div>
+</div>
+<article>
+<div class="reels rv">
+<video data-src="./assets/reels/game-tee.mp4" poster="./assets/reels/game-tee-poster.png" muted loop playsinline preload="none"></video>
+<video data-src="./assets/reels/chaos-tee.mp4" poster="./assets/reels/chaos-tee-poster.png" muted loop playsinline preload="none"></video>
+</div>
+<div class="cap"><p>The Game Tee and the Chaos Tee, cut for sound off.</p></div>
+
+<div class="pad"><div class="wrap rv">
 <p class="brief">Two tees relaunching a dormant label, with no media budget.</p>
 <p class="concept">One remembered feeling per tee: Game Over for the hours that disappeared in front of a screen, Chaos for the plans that never went to plan. Product floated in an arcade-lit still life — CRT, cartridges, vinyl — with pixel artefacts as the only graphic device.</p>
 </div></div>
 
-<div class="reelrow rv">
-<video data-src="./assets/reels/game-tee.mp4" poster="./assets/reels/game-tee-poster.png" muted loop playsinline preload="none"></video>
-<video data-src="./assets/reels/chaos-tee.mp4" poster="./assets/reels/chaos-tee-poster.png" muted loop playsinline preload="none"></video>
-</div>
-<div class="cap"><p>The Game Tee and the Chaos Tee.</p></div>
-
-<div class="grid2 rv">
+<div class="rows rv">
 <figure><img src="./assets/campaign/gameover-keyart.png" alt="Game Over key art" loading="lazy" decoding="async"></figure>
-<figure><img src="./assets/campaign/retrostate-pink-shirt.png" alt="Retro State shirt" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/campaign/retrostate-pink-shirt.png" alt="Retro State shirt, pink" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/campaign/retrostate-yellow-shirt.png" alt="Retro State shirt, yellow" loading="lazy" decoding="async"></figure>
 <figure><img src="./assets/campaign/eatgame-controller.png" alt="Controller still" loading="lazy" decoding="async"></figure>
 <figure><img src="./assets/campaign/gameover-curtain.png" alt="Game Over curtain still" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/campaign/gameover-04.png" alt="Game Over still" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/campaign/retrostate-lookbook-03.png" alt="Retro State lookbook still" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/campaign/adeel-phone-records.png" alt="Records still life" loading="lazy" decoding="async"></figure>
 </div>
+<div class="cap"><p>Key art and product, one still life, one light source.</p></div>
 
-<div class="sec-t"><div class="wrap rv">
+<div class="pad"><div class="wrap rv">
 <div class="result">
 <span class="lbl lbl-a">Result</span>
-<p><span class="ph">[ADD RESULT — one line.]</span></p>
+<p>A dormant label relaunched on two tees, with no media budget. <span class="ph">[ADD RESULT]</span></p>
 </div>
 <dl class="credits">
 <div><dt class="lbl">Creative Direction</dt><dd>Bilal Ghazi</dd></div>
 <div><dt class="lbl">Concept &amp; Copy</dt><dd>Bilal Ghazi</dd></div>
 <div><dt class="lbl">Direction &amp; Edit</dt><dd>Bilal Ghazi</dd></div>
-<div><dt class="lbl">Photography</dt><dd><span class="ph">[NAME]</span></dd></div>
-<div><dt class="lbl">Styling</dt><dd><span class="ph">[NAME]</span></dd></div>
+<div><dt class="lbl">Photography</dt><dd>In-house team, directed by Bilal Ghazi</dd></div>
+<div><dt class="lbl">Styling</dt><dd>In-house team, directed by Bilal Ghazi</dd></div>
 </dl>
 </div></div>
 </article>
 
 
-<!-- ── Disciplines ─────────────────────────────────────────────── -->
+<!-- ── How a drop gets made ────────────────────────────────────── -->
 <section class="sec" style="border-top:1px solid var(--rule)"><div class="wrap rv">
+<span class="lbl">How a drop gets made</span>
+<ol class="steps">
+<li><h3><b>01</b>Brief and merchandising input</h3><p>Sit with the line plan before anything is shot. What the drop is, how many pieces, what has to sell.</p></li>
+<li><h3><b>02</b>Concept and copy</h3><p>One idea the whole drop can carry, written down as a line. If it can't be said in a sentence it isn't ready.</p></li>
+<li><h3><b>03</b>Casting and location</h3><p>Cast and place chosen to match the concept, not the other way round. Recces before shoot days.</p></li>
+<li><h3><b>04</b>Shoot direction</h3><p>Stills and film captured in the same session, from one shot list, so nothing has to be re-shot.</p></li>
+<li><h3><b>05</b>Post and asset cutting</h3><p>One grade, then cut out to every format needed — 9:16, feed, product page — from the same master.</p></li>
+<li><h3><b>06</b>Launch sequencing</h3><p>Order of release planned across feed, story and product pages so the drop lands as one moment.</p></li>
+</ol>
+</div></section>
+
+
+<!-- ── One drop, every format ──────────────────────────────────── -->
+<section class="pad" style="border-top:1px solid var(--rule);padding-bottom:0"><div class="wrap rv">
+<span class="lbl">One drop, every format</span>
+</div></section>
+<div class="mosaic rv" style="margin-top:clamp(28px,5vw,44px)">
+<figure><img src="./assets/adeel/artwork-bear-black.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure><video data-src="./assets/reels/adeel-before-you-speak.mp4" poster="./assets/reels/adeel-before-you-speak-poster.png" muted loop playsinline preload="none"></video></figure>
+<figure><img src="./assets/adeel/polo-keyart.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/adeel/polo-embroidery.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/adeel/fragile-giant-tee.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure><video data-src="./assets/reels/adeel-ready-to-ship.mp4" poster="./assets/reels/adeel-ready-to-ship-poster.png" muted loop playsinline preload="none"></video></figure>
+<figure><img src="./assets/adeel/fragile-giant-model.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/adeel/movement-back-print.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/adeel/polo-look-spotlight.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure><video data-src="./assets/reels/adeel-getting-it-right.mp4" poster="./assets/reels/adeel-getting-it-right-poster.png" muted loop playsinline preload="none"></video></figure>
+<figure><img src="./assets/adeel/gallery-wide.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/adeel/tee-chest-print.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/adeel/gallery-hanging.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure><video data-src="./assets/reels/adeel-takes-time.mp4" poster="./assets/reels/adeel-takes-time-poster.png" muted loop playsinline preload="none"></video></figure>
+<figure><img src="./assets/adeel/gallery-mannequins.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure><video data-src="./assets/reels/adeel-studio-note.mp4" poster="./assets/reels/adeel-studio-note-poster.png" muted loop playsinline preload="none"></video></figure>
+</div>
+<div class="cap"><p>Movement × Adeel uz Zafar, every asset. Film stills, product shots, back prints, key art and launch coverage — all cut from one direction, so the drop reads the same everywhere it appears.</p></div>
+
+
+<!-- ── Disciplines ─────────────────────────────────────────────── -->
+<section class="sec"><div class="wrap rv">
 <span class="lbl">Disciplines</span>
-<ul class="list">
-<li>Creative direction</li><li>Concept and copy</li><li>Photography</li>
-<li>Videography</li><li>Styling</li><li>Post-production</li>
+<ul class="disc">
+<li><h3>Creative direction</h3><p>Set the idea and the look for all three drops, from line plan through launch.</p></li>
+<li><h3>Concept and copy</h3><p>Wrote the concepts — Lyari-made not Lyari-themed; one remembered feeling per tee.</p></li>
+<li><h3>Photography</h3><p>Directed the in-house team on location in Lyari and on the Retro State still life.</p></li>
+<li><h3>Videography</h3><p>9:16 films for the Adeel collaboration and both Retro State tees.</p></li>
+<li><h3>Styling</h3><p>Directed styling across all three drops, including the gallery launch night.</p></li>
+<li><h3>Post-production</h3><p>Graded and cut every asset from one master, sound-off, to each format.</p></li>
 </ul>
 </div></section>
 
@@ -241,7 +339,7 @@ footer{padding:40px var(--g) 56px;border-top:1px solid var(--rule)}
 <div class="contact">
 <a href="mailto:ghazibilal333@gmail.com">ghazibilal333@gmail.com</a>
 <a href="tel:+923322091532">0332 209 1532</a>
-<a href="#" class="ph" style="border-bottom-color:var(--ochre-lt)">[ADD RESUME LINK]</a>
+<a href="./assets/bilal-ghazi-cv.pdf">Resume (PDF)</a>
 </div>
 </div></section>
 
