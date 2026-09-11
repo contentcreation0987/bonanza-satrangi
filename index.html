@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bilal Ghazi — creative &amp; content</title>
+<meta name="description" content="Campaign case studies: Movement × Adeel uz Zafar, Movement × Lyari Drop, Retro State.">
+<meta name="theme-color" content="#FAF8F5">
+<meta property="og:title" content="Bilal Ghazi — creative &amp; content">
+<meta property="og:description" content="Campaign case studies: Movement × Adeel uz Zafar, Movement × Lyari Drop, Retro State.">
+<meta property="og:image" content="./assets/adeel/artwork-bear-black.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap">
+<link rel="preload" as="image" href="./assets/adeel/artwork-bear-black.jpg" fetchpriority="high">
+<style>
+:root{
+--paper:#FAF8F5;--paper-2:#EFECE6;--ink:#0E0D0B;--ink-2:#2A2823;--ink-3:#5C574E;--ink-4:#8E887D;
+--ochre:#A16207;--ochre-dk:#7C4A05;--ochre-lt:#C88A24;--ochre-tint:#F0E4CE;--void:#0A0908;
+--rule:rgba(14,13,11,.14);--rule-2:rgba(14,13,11,.34);--rule-media:rgba(250,248,245,.22);
+--f:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+--g:clamp(20px,5.5vw,72px);--sy:clamp(80px,15vw,180px);
+--e:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink-2);font-family:var(--f);font-size:15px;line-height:1.62;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+img,video{display:block;max-width:100%}
+h1,h2,h3,p,dl,dd,figure,ul{margin:0}ul{padding:0;list-style:none}
+a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule-2);transition:opacity 140ms var(--e),border-color 140ms var(--e)}
+a:hover{opacity:.62;border-bottom-color:var(--ochre)}
+a:active{opacity:.5}
+:focus-visible{outline:1px solid var(--ochre);outline-offset:3px}
+::selection{background:var(--ochre-tint);color:var(--ink)}
+.wrap{max-width:1180px;margin-inline:auto}
+.sec{padding:var(--sy) var(--g)}
+.sec-t{padding:56px var(--g)}
+.lbl{font-size:11px;font-weight:500;line-height:1.1;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-4)}
+.lbl-a{color:var(--ochre)}
+.rv{opacity:0;transform:translateY(14px);transition:opacity 640ms var(--e),transform 640ms var(--e)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* ══ INTRO — SWAPPABLE BLOCK. Edit only inside #intro to retarget this page. ══ */
+#intro{padding:clamp(96px,22vw,200px) var(--g) var(--sy)}
+#intro .name{font-size:clamp(2.75rem,13vw,7rem);font-weight:600;line-height:.9;letter-spacing:-.05em;color:var(--ink);margin-bottom:clamp(28px,6vw,44px)}
+#intro .role{font-size:clamp(1.25rem,5vw,2rem);font-weight:400;line-height:1.18;letter-spacing:-.025em;color:var(--ink);max-width:26ch}
+/* ══ END SWAPPABLE BLOCK ══ */
+
+.case{border-top:1px solid var(--rule)}
+.case-head{display:grid;gap:20px}
+.idx{display:flex;gap:12px;align-items:baseline}
+.title{font-size:clamp(2.5rem,11.5vw,7rem);font-weight:600;line-height:.9;letter-spacing:-.045em;color:var(--ink);text-wrap:balance}
+.brief{font-size:clamp(1.0625rem,3.4vw,1.375rem);line-height:1.35;letter-spacing:-.02em;color:var(--ink);max-width:30ch}
+.concept{color:var(--ink-3);max-width:36ch}
+.bleed{background:var(--void)}
+.bleed img,.bleed video{width:100%;height:auto}
+.tall{max-height:100svh;object-fit:contain;margin-inline:auto}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:2px;background:var(--void)}
+.grid2>figure{margin:0;overflow:hidden;aspect-ratio:4/5}
+.grid2 img{width:100%;height:100%;object-fit:cover}
+.reelrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:2px;background:var(--void)}
+.reelrow video{width:100%;aspect-ratio:9/16;object-fit:cover}
+.cap{padding:14px var(--g) 28px;background:var(--void)}
+.cap p{max-width:40ch;font-size:13px;line-height:1.45;color:rgba(250,248,245,.66)}
+.result{border-top:1px solid var(--rule-2);padding-top:24px;display:grid;gap:16px;max-width:34ch}
+.result p{font-size:clamp(1.375rem,5.2vw,2.125rem);line-height:1.18;letter-spacing:-.025em;font-weight:500;color:var(--ink)}
+.ph{color:var(--ochre-dk);background:var(--ochre-tint);padding:.1em .35em;font-weight:500}
+.credits{display:grid;gap:0;max-width:520px;margin-top:clamp(40px,8vw,64px)}
+.credits div{display:grid;grid-template-columns:minmax(112px,34%) 1fr;gap:16px;padding-block:11px;border-top:1px solid var(--rule)}
+.credits dd{font-size:13px;color:var(--ink-2)}
+.credits dt{padding-top:2px}
+.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:0 40px;margin-top:32px}
+.list li{font-size:clamp(1.0625rem,2.8vw,1.3125rem);line-height:1.25;letter-spacing:-.02em;color:var(--ink);padding-block:14px;border-top:1px solid var(--rule)}
+.contact{display:grid;gap:18px;margin-top:32px}
+.contact a{font-size:clamp(1.0625rem,3.2vw,1.375rem);color:var(--ochre-dk);border-bottom-color:var(--ochre-lt);justify-self:start}
+footer{padding:40px var(--g) 56px;border-top:1px solid var(--rule)}
+</style>
+</head>
+<body>
+<main>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     INTRO — SWAPPABLE. This is the only section that changes between
+     applications. Edit the name and the one role line below; leave
+     everything after </section> untouched.
+     ═══════════════════════════════════════════════════════════════════ -->
+<section id="intro">
+<div class="wrap rv">
+<h1 class="name">Bilal Ghazi</h1>
+<p class="role">Creative and content lead. I build campaigns end to end — concept, direction, edit.</p>
+</div>
+</section>
+<!-- ═══════════════════ END SWAPPABLE INTRO ═══════════════════ -->
+
+
+<!-- ── CASE 01 · Movement × Adeel uz Zafar ─────────────────────── -->
+<article class="case">
+<div class="sec-t"><div class="wrap case-head rv">
+<div class="idx"><span class="lbl lbl-a">01</span><span class="lbl">Artist collaboration</span></div>
+<h2 class="title">Movement × Adeel&nbsp;uz&nbsp;Zafar</h2>
+<p class="brief">A limited apparel drop built on Adeel uz Zafar's mummified-animal drawings, launched with Sanat Initiative.</p>
+<p class="concept">Take the artist's work off the gallery wall without flattening it into a print. The bandaged figures stay monochrome and stay drawn — the garment becomes another surface they live on, not merchandise they decorate. The launch was staged inside the gallery so the canvases and the clothes read as one body of work.</p>
+</div></div>
+
+<div class="bleed rv"><img src="./assets/adeel/artwork-bear-black.jpg" alt="Adeel uz Zafar — mummified bear drawing on black" class="tall" fetchpriority="high" width="1170" height="1560"></div>
+<div class="cap"><p>The source drawing. Monochrome, bandaged, hand-rendered.</p></div>
+
+<div class="reelrow rv">
+<video data-src="./assets/reels/adeel-before-you-speak.mp4" poster="./assets/reels/adeel-before-you-speak-poster.png" muted loop playsinline preload="none"></video>
+<video data-src="./assets/reels/adeel-artist-story.mp4" poster="./assets/reels/adeel-artist-story-poster.png" muted loop playsinline preload="none"></video>
+</div>
+<div class="cap"><p>Artist films — the drawing being made, and Adeel on what the collaboration is for.</p></div>
+
+<div class="grid2 rv">
+<figure><img src="./assets/adeel/artist-studio-bw.jpg" alt="Adeel uz Zafar working in his studio" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/adeel/gallery-viewer-canvases.jpg" alt="Visitor in a collection tee facing the canvases" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/adeel/artist-sculpture.jpg" alt="Adeel uz Zafar with the bandaged figure sculpture" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/adeel/polo-embroidery.jpg" alt="Polo chest embroidery detail" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/adeel/fragile-giant-tee.jpg" alt="The Fragile Giant tee" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/adeel/gallery-wide.jpg" alt="Launch night at Sanat Initiative" loading="lazy" decoding="async"></figure>
+</div>
+
+<div class="reelrow rv">
+<video data-src="./assets/reels/adeel-getting-it-right.mp4" poster="./assets/reels/adeel-getting-it-right-poster.png" muted loop playsinline preload="none"></video>
+<video data-src="./assets/reels/adeel-ready-to-ship.mp4" poster="./assets/reels/adeel-ready-to-ship-poster.png" muted loop playsinline preload="none"></video>
+</div>
+<div class="cap"><p>Product and packing films, cut for sound off.</p></div>
+
+<div class="sec-t"><div class="wrap rv">
+<div class="result">
+<span class="lbl lbl-a">Result</span>
+<p><span class="ph">[ADD RESULT — sell-through, reach or press. One line.]</span></p>
+</div>
+<dl class="credits">
+<div><dt class="lbl">Creative Direction</dt><dd>Bilal Ghazi</dd></div>
+<div><dt class="lbl">Concept &amp; Copy</dt><dd>Bilal Ghazi</dd></div>
+<div><dt class="lbl">Direction &amp; Edit</dt><dd>Bilal Ghazi</dd></div>
+<div><dt class="lbl">Artist</dt><dd>Adeel uz Zafar</dd></div>
+<div><dt class="lbl">Photography</dt><dd><span class="ph">[NAME]</span></dd></div>
+<div><dt class="lbl">Styling</dt><dd><span class="ph">[NAME]</span></dd></div>
+</dl>
+</div></div>
+</article>
+
+
+<!-- ── CASE 02 · Movement × Lyari Drop ─────────────────────────── -->
+<article class="case">
+<div class="sec-t"><div class="wrap case-head rv">
+<div class="idx"><span class="lbl lbl-a">02</span><span class="lbl">Culture-led collection</span></div>
+<h2 class="title">Movement × Lyari&nbsp;Drop</h2>
+<p class="brief">A capsule tied to a neighbourhood rather than a season.</p>
+<p class="concept">Make it read as Lyari-made, not Lyari-themed. The print collages the place itself, so the garment carries its own location. Shot on the ground in black and white, local cast, no studio, no grade beyond contrast.</p>
+</div></div>
+
+<div class="bleed rv"><img src="./assets/campaign/lyari-tee-back.png" alt="From Lyari to the World — back print" class="tall" loading="lazy" decoding="async"></div>
+<div class="cap"><p>Back print — from Lyari to the world.</p></div>
+
+<div class="grid2 rv">
+<figure><img src="./assets/campaign/movement-tee-portrait.png" alt="Movement tee portrait" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/adeel/movement-back-print.jpg" alt="Movement arc back print" loading="lazy" decoding="async"></figure>
+</div>
+
+<div class="sec-t"><div class="wrap rv">
+<div class="result">
+<span class="lbl lbl-a">Result</span>
+<p><span class="ph">[ADD RESULT — one line.]</span></p>
+</div>
+<dl class="credits">
+<div><dt class="lbl">Creative Direction</dt><dd>Bilal Ghazi</dd></div>
+<div><dt class="lbl">Concept &amp; Copy</dt><dd>Bilal Ghazi</dd></div>
+<div><dt class="lbl">Direction &amp; Edit</dt><dd>Bilal Ghazi</dd></div>
+<div><dt class="lbl">Photography</dt><dd><span class="ph">[NAME]</span></dd></div>
+<div><dt class="lbl">Styling</dt><dd><span class="ph">[NAME]</span></dd></div>
+</dl>
+<p class="lbl" style="margin-top:28px">No 9:16 film was shot for this drop — stills only.</p>
+</div></div>
+</article>
+
+
+<!-- ── CASE 03 · Retro State / Game Over ───────────────────────── -->
+<article class="case">
+<div class="sec-t"><div class="wrap case-head rv">
+<div class="idx"><span class="lbl lbl-a">03</span><span class="lbl">Product art direction</span></div>
+<h2 class="title">Retro State — Game&nbsp;Over</h2>
+<p class="brief">Two tees relaunching a dormant label, with no media budget.</p>
+<p class="concept">One remembered feeling per tee: Game Over for the hours that disappeared in front of a screen, Chaos for the plans that never went to plan. Product floated in an arcade-lit still life — CRT, cartridges, vinyl — with pixel artefacts as the only graphic device.</p>
+</div></div>
+
+<div class="reelrow rv">
+<video data-src="./assets/reels/game-tee.mp4" poster="./assets/reels/game-tee-poster.png" muted loop playsinline preload="none"></video>
+<video data-src="./assets/reels/chaos-tee.mp4" poster="./assets/reels/chaos-tee-poster.png" muted loop playsinline preload="none"></video>
+</div>
+<div class="cap"><p>The Game Tee and the Chaos Tee.</p></div>
+
+<div class="grid2 rv">
+<figure><img src="./assets/campaign/gameover-keyart.png" alt="Game Over key art" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/campaign/retrostate-pink-shirt.png" alt="Retro State shirt" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/campaign/eatgame-controller.png" alt="Controller still" loading="lazy" decoding="async"></figure>
+<figure><img src="./assets/campaign/gameover-curtain.png" alt="Game Over curtain still" loading="lazy" decoding="async"></figure>
+</div>
+
+<div class="sec-t"><div class="wrap rv">
+<div class="result">
+<span class="lbl lbl-a">Result</span>
+<p><span class="ph">[ADD RESULT — one line.]</span></p>
+</div>
+<dl class="credits">
+<div><dt class="lbl">Creative Direction</dt><dd>Bilal Ghazi</dd></div>
+<div><dt class="lbl">Concept &amp; Copy</dt><dd>Bilal Ghazi</dd></div>
+<div><dt class="lbl">Direction &amp; Edit</dt><dd>Bilal Ghazi</dd></div>
+<div><dt class="lbl">Photography</dt><dd><span class="ph">[NAME]</span></dd></div>
+<div><dt class="lbl">Styling</dt><dd><span class="ph">[NAME]</span></dd></div>
+</dl>
+</div></div>
+</article>
+
+
+<!-- ── Disciplines ─────────────────────────────────────────────── -->
+<section class="sec" style="border-top:1px solid var(--rule)"><div class="wrap rv">
+<span class="lbl">Disciplines</span>
+<ul class="list">
+<li>Creative direction</li><li>Concept and copy</li><li>Photography</li>
+<li>Videography</li><li>Styling</li><li>Post-production</li>
+</ul>
+</div></section>
+
+<!-- ── Clients ─────────────────────────────────────────────────── -->
+<section class="sec" style="padding-top:0"><div class="wrap rv">
+<span class="lbl">Clients</span>
+<ul class="list">
+<li>Movement</li><li>Bubbles Car Care</li><li>PakRef</li>
+<li>AI Horizon <span style="color:var(--ink-4)">UAE</span></li>
+<li>BE FORWARD <span style="color:var(--ink-4)">Japan</span></li>
+<li>Keach Technologies</li>
+</ul>
+</div></section>
+
+<!-- ── Contact ─────────────────────────────────────────────────── -->
+<section class="sec" style="border-top:1px solid var(--rule)"><div class="wrap rv">
+<span class="lbl">Contact</span>
+<div class="contact">
+<a href="mailto:ghazibilal333@gmail.com">ghazibilal333@gmail.com</a>
+<a href="tel:+923322091532">0332 209 1532</a>
+<a href="#" class="ph" style="border-bottom-color:var(--ochre-lt)">[ADD RESUME LINK]</a>
+</div>
+</div></section>
+
+<footer><div class="wrap"><span class="lbl">Bilal Ghazi · Karachi</span></div></footer>
+</main>
+
+<script>
+(function(){
+var rvs=document.querySelectorAll('.rv');
+if(!('IntersectionObserver' in window)){rvs.forEach(function(e){e.classList.add('in')});return}
+var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;ro.unobserve(e.target);e.target.classList.add('in')})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+rvs.forEach(function(e){ro.observe(e)});
+var vids=document.querySelectorAll('video[data-src]');
+var arm=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var v=e.target;if(!v.src){v.src=v.dataset.src}arm.unobserve(v)})},{rootMargin:'400px 0px'});
+var play=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){})}else{v.pause()}})},{threshold:.35});
+vids.forEach(function(v){arm.observe(v);play.observe(v)});
+})();
+</script>
+</body>
+</html>
